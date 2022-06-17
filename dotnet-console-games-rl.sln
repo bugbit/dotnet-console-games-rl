@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet-console-games-rl", "dotnet-console-games-rl\dotnet-console-games-rl.csproj", "{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
