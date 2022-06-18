@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = " DotnetConsoleGamesRL", "DotnetConsoleGamesRL\DotnetConsoleGamesRL.csproj", "{3963622B-D388-430C-87E9-9E7CF967CD54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PongRL1", "PongRL1\PongRL1.csproj", "{8589BD6B-FCB2-4FC6-BCC2-D622706F2F57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BBB726-D740-4DE9-863A-1CEC65C73BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3963622B-D388-430C-87E9-9E7CF967CD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3963622B-D388-430C-87E9-9E7CF967CD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3963622B-D388-430C-87E9-9E7CF967CD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3963622B-D388-430C-87E9-9E7CF967CD54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8589BD6B-FCB2-4FC6-BCC2-D622706F2F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8589BD6B-FCB2-4FC6-BCC2-D622706F2F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8589BD6B-FCB2-4FC6-BCC2-D622706F2F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8589BD6B-FCB2-4FC6-BCC2-D622706F2F57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

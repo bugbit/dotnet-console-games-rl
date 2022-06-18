@@ -2,9 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>dotnet_console_games_rl</RootNamespace>
+    <RootNamespace>DotnetConsoleGamesRL</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="System.Numerics" />
+  </ItemGroup>
 
 </Project>
