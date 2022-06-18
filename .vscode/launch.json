@@ -8,11 +8,11 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",        
-            "preLaunchTask": "build",
+            "preLaunchTask": "build PongRL1",
             "program": "${workspaceFolder}/PongRL1/bin/Debug/net6.0/PongRL1.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
+            "console": "externalTerminal",
             "stopAtEntry": false
         },
         {

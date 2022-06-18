@@ -89,6 +89,7 @@ namespace DotnetConsoleGamesRL.Native
             public delegate int reset_shell_mode();
             public delegate int savetty();
             public delegate int resetty();
+            public delegate int addstr(string str);
         }
 
         internal class NativeMethods
@@ -163,7 +164,9 @@ namespace DotnetConsoleGamesRL.Native
             public readonly Delegates.reset_shell_mode reset_shell_mode;
             public readonly Delegates.savetty savetty;
             public readonly Delegates.resetty resetty;
-            public UnmanagedLibrary UnmanagedLibrary;
+            public readonly Delegates.addstr addstr;
+
+            private UnmanagedLibrary UnmanagedLibrary;
 
             public NativeMethods(UnmanagedLibrary lib)
             {
@@ -238,6 +241,7 @@ namespace DotnetConsoleGamesRL.Native
                 reset_shell_mode = lib.GetNativeMethodDelegate<Delegates.reset_shell_mode>("reset_shell_mode");
                 savetty = lib.GetNativeMethodDelegate<Delegates.savetty>("savetty");
                 resetty = lib.GetNativeMethodDelegate<Delegates.resetty>("resetty");
+                addstr = lib.GetNativeMethodDelegate<Delegates.addstr>("addstr");
             }
         }
 
@@ -320,6 +324,7 @@ namespace DotnetConsoleGamesRL.Native
         static public int reset_shell_mode() => methods.reset_shell_mode();
         static public int savetty() => methods.savetty();
         static public int resetty() => methods.resetty();
+        static public int addstr(string str) => methods.addstr(str);
 
         static NCurses()
         {
