@@ -25,10 +25,16 @@ SOFTWARE.
 */
 #endregion
 
-namespace DotnetConsoleGamesRL.Games.PingPong
-{
-    public enum PPReward
-    {
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
+namespace DotnetConsoleGamesRL.Core
+{
+    public interface IInit
+    {
+        void Init();
+        void Done();
     }
 }

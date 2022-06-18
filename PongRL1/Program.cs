@@ -1,11 +1,13 @@
-﻿try
+﻿using static DotnetConsoleGamesRL.Native.NCurses;
+
+try
 {
     var env = new PPEnvironment();
 
-    DotnetConsoleGamesRL.Native.NCurses.initscr();
-    DotnetConsoleGamesRL.Native.NCurses.addstr("HelloWord");
-    DotnetConsoleGamesRL.Native.NCurses.refresh();
-    DotnetConsoleGamesRL.Native.NCurses.endwin();
+    initscr();
+    addstr("HelloWord");
+    refresh();
+    endwin();
     //env.AddAgent
 }
 catch (Exception ex)

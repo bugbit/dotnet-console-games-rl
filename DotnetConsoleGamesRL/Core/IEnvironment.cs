@@ -32,13 +32,12 @@ namespace DotnetConsoleGamesRL.Core;
 /// A: Action
 /// R:Reward
 /// </summary>
-public interface IEnvironment<S, A, R>
+public interface IEnvironment<S, A, R> : IInit
 {
     Vector2 Size { get; }
     IRender<S, A, R>? Render { get; set; }
-    S? State { get; }
+    S GetState ();
 
-    void AddAgent(IAgent<S, A, R> _agent);
-    void Init();
+    //void AddAgent(IAgent<S, A, R> _agent);
     void Reset();
 }

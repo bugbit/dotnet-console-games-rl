@@ -31,25 +31,24 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DotnetConsoleGamesRL.Games.PingPong
+namespace DotnetConsoleGamesRL.Games.PingPong;
+
+public struct PPEstado : IEquatable<PPEstado>
 {
-    public struct PPEstado : IEquatable<PPEstado>
-    {
-        public Vector2 PosPlayer1 { get; set; }
-        public Vector2 DirPlayer1 { get; set; }
-        public Vector2 PosPlayer2 { get; set; }
-        public Vector2 DirPlayer2 { get; set; }
-        public Vector2 PosBall { get; set; }
-        public Vector2 DirBall { get; set; }
+    public Vector2 PosPlayer1 { get; set; }
+    public Vector2 DirPlayer1 { get; set; }
+    public Vector2 PosPlayer2 { get; set; }
+    public Vector2 DirPlayer2 { get; set; }
+    public Vector2 PosBall { get; set; }
+    public Vector2 VelBall { get; set; }
 
-        public bool Equals(PPEstado other)
-            => PosPlayer1 == other.PosPlayer1 && DirPlayer1 == other.DirPlayer1
-            && PosPlayer2 == other.PosPlayer2 && DirPlayer2 == other.DirPlayer2
-            && PosBall == other.PosBall && DirBall == other.DirBall;
+    public bool Equals(PPEstado other)
+        => PosPlayer1 == other.PosPlayer1 && DirPlayer1 == other.DirPlayer1
+        && PosPlayer2 == other.PosPlayer2 && DirPlayer2 == other.DirPlayer2
+        && PosBall == other.PosBall && VelBall == other.VelBall;
 
-        public override bool Equals([NotNullWhen(true)] object? obj) => (obj is PPEstado e) && Equals(e);
+    public override bool Equals([NotNullWhen(true)] object? obj) => (obj is PPEstado e) && Equals(e);
 
-        public override int GetHashCode()
-            => (PosPlayer1, DirPlayer1, PosPlayer2, DirPlayer2, PosBall, DirBall).GetHashCode();
-    }
+    public override int GetHashCode()
+        => (PosPlayer1, DirPlayer1, PosPlayer2, DirPlayer2, PosBall, VelBall).GetHashCode();
 }

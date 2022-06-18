@@ -25,9 +25,15 @@ SOFTWARE.
 */
 #endregion
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace DotnetConsoleGamesRL.Games.PingPong;
 
-public enum PPAciones
+public class Paddle
 {
-    UpPlayer1, DownPlayer1, UpPlayer2, DownPlayer2
+    public Vector2 Position { get; set; }
+    public Vector2 Direction { get; set; }
 }

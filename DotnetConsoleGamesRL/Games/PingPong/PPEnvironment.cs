@@ -32,7 +32,7 @@ using System.Threading.Tasks;
 
 namespace DotnetConsoleGamesRL.Games.PingPong
 {
-    public class PPEnvironment : Core.Environment<PPEstado, PPAciones, PPReward>
+    public class PPEnvironment : Core.Environment<PPEstado, PPAciones>
     {
         public int PointsPlayer1 { get; set; } = 0;
         public int PointsPlayer2 { get; set; } = 0;
