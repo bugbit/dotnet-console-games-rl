@@ -29,18 +29,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotnetConsoleGamesRL.Core;
 
 namespace DotnetConsoleGamesRL.Games.PingPong
 {
-    public class PPEnvironment : Core.Environment<PPEstado, PPAciones>
+    public class PPEnvironment : Core.Environment<Core.VoidOptions, PPEstado, PPAciones>
     {
-        public int PointsPlayer1 { get; set; } = 0;
-        public int PointsPlayer2 { get; set; } = 0;
+        private Paddle[] players = new Paddle[2];
+        private Ball ball = new Ball();
 
-        public override void Reset()
+        public override PPEstado Reset(bool retstate0 = false, VoidOptions options = default)
         {
-            base.Reset();
-            
+            throw new NotImplementedException();
+        }
+
+        public override (PPEstado state, float reward, bool done, IDictionary? info) Step(PPAciones action)
+        {
+            throw new NotImplementedException();
+        }
+        public override object? Render(RenderModes mode = RenderModes.None)
+        {
+            throw new NotImplementedException();
         }
     }
 }

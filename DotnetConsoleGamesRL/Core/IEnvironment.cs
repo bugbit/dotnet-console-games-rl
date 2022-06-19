@@ -28,15 +28,14 @@ SOFTWARE.
 namespace DotnetConsoleGamesRL.Core;
 
 /// <summary>
+/// O : Options
 /// S: Estate
 /// A: Action
 /// R:Reward
 /// </summary>
-public interface IEnvironment<S, A, R> : IInit
+public interface IEnvironment<O, S, A, R>
 {
-    IRender<S, A, R>? Render { get; set; }
-    S GetState ();
-
-    //void AddAgent(IAgent<S, A, R> _agent);
-    void Reset();
+    S? Reset(bool retstate0 = false, O? options = default(O));
+    (S state, R reward, bool done, IDictionary? info) Step(A action);
+    object? Render(RenderModes mode=RenderModes.None);
 }

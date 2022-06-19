@@ -25,16 +25,9 @@ SOFTWARE.
 */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace DotnetConsoleGamesRL.Core;
 
-namespace DotnetConsoleGamesRL.Core
+public enum RenderModes
 {
-    public interface IInit
-    {
-        void Init();
-        void Done();
-    }
+    None, Human, Ansi
 }

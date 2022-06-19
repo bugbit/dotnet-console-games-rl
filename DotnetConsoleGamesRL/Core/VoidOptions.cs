@@ -25,14 +25,11 @@ SOFTWARE.
 */
 #endregion
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace DotnetConsoleGamesRL.Core;
 
-/// <summary>
-/// S: Estate
-/// A: Action
-/// R:Reward
-/// </summary>
-public interface IRender<S, A, R>
-{
-    void Render(IEnvironment<S, A, R> _render);
-}
+public struct VoidOptions { }

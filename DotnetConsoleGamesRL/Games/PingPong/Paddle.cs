@@ -35,5 +35,4 @@ namespace DotnetConsoleGamesRL.Games.PingPong;
 public class Paddle
 {
     public Vector2 Position { get; set; }
-    public Vector2 Direction { get; set; }
 }

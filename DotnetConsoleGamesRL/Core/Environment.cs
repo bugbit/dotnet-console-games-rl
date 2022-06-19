@@ -32,16 +32,9 @@ namespace DotnetConsoleGamesRL.Core;
 /// A: Action
 /// R:Reward
 /// </summary>
-public class Environment<S, A> : IEnvironment<S, A, float>
+public abstract class Environment<O, S, A> : IEnvironment<O, S, A, float>
 {
-    //private List<IAgent<S, A, float>> Agents = new List<IAgent<S, A, float>>();
-
-
-    public IRender<S, A, float>? Render { get; set; }
-    public virtual S GetState() => default(S);
-
-    //public void AddAgent(IAgent<S, A, float> _agent) => Agents.Add(_agent);
-    public virtual void Init() { Reset(); }
-    public virtual void Done() { }
-    public virtual void Reset() { }
+    public abstract S? Reset(bool retstate0 = false, O? options = default(O));
+    public abstract (S state, float reward, bool done, IDictionary? info) Step(A action);
+    public abstract object? Render(RenderModes mode=RenderModes.None);
 }
