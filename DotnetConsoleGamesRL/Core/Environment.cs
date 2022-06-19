@@ -37,7 +37,6 @@ public class Environment<S, A> : IEnvironment<S, A, float>
     //private List<IAgent<S, A, float>> Agents = new List<IAgent<S, A, float>>();
 
 
-    public Vector2 Size { get; protected set; } = new Vector2(80, 25);
     public IRender<S, A, float>? Render { get; set; }
     public virtual S GetState() => default(S);
 

@@ -34,7 +34,6 @@ namespace DotnetConsoleGamesRL.Core;
 /// </summary>
 public interface IEnvironment<S, A, R> : IInit
 {
-    Vector2 Size { get; }
     IRender<S, A, R>? Render { get; set; }
     S GetState ();
 
