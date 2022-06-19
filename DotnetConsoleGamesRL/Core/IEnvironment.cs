@@ -35,7 +35,8 @@ namespace DotnetConsoleGamesRL.Core;
 /// </summary>
 public interface IEnvironment<O, S, A, R>
 {
-    S? Reset(bool retstate0 = false, O? options = default(O));
+    S Reset(O? options = default(O));
     (S state, R reward, bool done, IDictionary? info) Step(A action);
     object? Render(RenderModes mode=RenderModes.None);
+    void Close();
 }

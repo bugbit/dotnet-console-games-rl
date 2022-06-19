@@ -30,17 +30,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DotnetConsoleGamesRL.Core;
+using static DotnetConsoleGamesRL.Native.NCurses;
 
 namespace DotnetConsoleGamesRL.Games.PingPong
 {
-    public class PPEnvironment : Core.Environment<Core.VoidOptions, PPEstado, PPAciones>
+    public class PPEnvironment : Environment<VoidOptions, PPEstado, PPAciones>
     {
-        private Paddle[] players = new Paddle[2];
+        private const int paddleheight = 5;
+        private Vector2 size;
+        private Paddle[] paddles;
         private Ball ball = new Ball();
 
-        public override PPEstado Reset(bool retstate0 = false, VoidOptions options = default)
+        private PPEnvironment(Vector2 _size)
         {
-            throw new NotImplementedException();
+            size = _size;
+            paddles = new[]
+            {
+                new Paddle(),
+                new Paddle()
+            };
+        }
+
+        public override PPEstado Reset(VoidOptions options = default)
+        {
+            var paddle_y = (size.Y - paddleheight) / 2;
+
+            paddles[0].Position = new Vector2(1, paddle_y);
+            paddles[1].Position = new Vector2(size.X - paddle_y;
+            ball.Position = new Vector2(size.X / 2, size.Y / 2);
+
+            return new PPEstado();
         }
 
         public override (PPEstado state, float reward, bool done, IDictionary? info) Step(PPAciones action)
@@ -50,6 +69,18 @@ namespace DotnetConsoleGamesRL.Games.PingPong
         public override object? Render(RenderModes mode = RenderModes.None)
         {
             throw new NotImplementedException();
+        }
+
+        public override void Close()
+        {
+            endwin();
+        }
+
+        public static PPEnvironment Create()
+        {
+            var w = initscr();
+
+            return new PPEnvironment(new Vector2(getmaxx(w), getmaxy(w)));
         }
     }
 }

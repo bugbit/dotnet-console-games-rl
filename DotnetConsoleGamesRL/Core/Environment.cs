@@ -34,7 +34,8 @@ namespace DotnetConsoleGamesRL.Core;
 /// </summary>
 public abstract class Environment<O, S, A> : IEnvironment<O, S, A, float>
 {
-    public abstract S? Reset(bool retstate0 = false, O? options = default(O));
+    public abstract S Reset(O? options = default(O));
     public abstract (S state, float reward, bool done, IDictionary? info) Step(A action);
-    public abstract object? Render(RenderModes mode=RenderModes.None);
+    public abstract object? Render(RenderModes mode = RenderModes.None);
+    public abstract void Close();
 }

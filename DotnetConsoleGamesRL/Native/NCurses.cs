@@ -90,6 +90,8 @@ namespace DotnetConsoleGamesRL.Native
             public delegate int savetty();
             public delegate int resetty();
             public delegate int addstr(string str);
+            public delegate int getmaxx(IntPtr w);
+            public delegate int getmaxy(IntPtr w);
         }
 
         internal class NativeMethods
@@ -165,6 +167,8 @@ namespace DotnetConsoleGamesRL.Native
             public readonly Delegates.savetty savetty;
             public readonly Delegates.resetty resetty;
             public readonly Delegates.addstr addstr;
+            public readonly Delegates.getmaxx getmaxx;
+            public readonly Delegates.getmaxy getmaxy;
 
             private UnmanagedLibrary UnmanagedLibrary;
 
@@ -242,8 +246,54 @@ namespace DotnetConsoleGamesRL.Native
                 savetty = lib.GetNativeMethodDelegate<Delegates.savetty>("savetty");
                 resetty = lib.GetNativeMethodDelegate<Delegates.resetty>("resetty");
                 addstr = lib.GetNativeMethodDelegate<Delegates.addstr>("addstr");
+                getmaxx = lib.GetNativeMethodDelegate<Delegates.getmaxx>("getmaxx");
+                getmaxy = lib.GetNativeMethodDelegate<Delegates.getmaxy>("getmaxy");
             }
         }
+
+        public const int A_NORMAL = unchecked((int)0x0);
+        public const int A_STANDOUT = unchecked((int)0x10000);
+        public const int A_UNDERLINE = unchecked((int)0x20000);
+        public const int A_REVERSE = unchecked((int)0x40000);
+        public const int A_BLINK = unchecked((int)0x80000);
+        public const int A_DIM = unchecked((int)0x100000);
+        public const int A_BOLD = unchecked((int)0x200000);
+        public const int A_PROTECT = unchecked((int)0x1000000);
+        public const int A_INVIS = unchecked((int)0x800000);
+        public const int ACS_LLCORNER = unchecked((int)0x40006d);
+        public const int ACS_LRCORNER = unchecked((int)0x40006a);
+        public const int ACS_HLINE = unchecked((int)0x400071);
+        public const int ACS_ULCORNER = unchecked((int)0x40006c);
+        public const int ACS_URCORNER = unchecked((int)0x40006b);
+        public const int ACS_VLINE = unchecked((int)0x400078);
+        public const int ACS_LTEE = unchecked((int)0x400074);
+        public const int ACS_RTEE = unchecked((int)0x400075);
+        public const int ACS_BTEE = unchecked((int)0x400076);
+        public const int ACS_TTEE = unchecked((int)0x400077);
+        public const int ACS_PLUS = unchecked((int)0x40006e);
+        public const int ACS_S1 = unchecked((int)0x40006f);
+        public const int ACS_S9 = unchecked((int)0x400073);
+        public const int ACS_DIAMOND = unchecked((int)0x400060);
+        public const int ACS_CKBOARD = unchecked((int)0x400061);
+        public const int ACS_DEGREE = unchecked((int)0x400066);
+        public const int ACS_PLMINUS = unchecked((int)0x400067);
+        public const int ACS_BULLET = unchecked((int)0x40007e);
+        public const int ACS_LARROW = unchecked((int)0x40002c);
+        public const int ACS_RARROW = unchecked((int)0x40002b);
+        public const int ACS_DARROW = unchecked((int)0x40002e);
+        public const int ACS_UARROW = unchecked((int)0x40002d);
+        public const int ACS_BOARD = unchecked((int)0x400068);
+        public const int ACS_LANTERN = unchecked((int)0x400069);
+        public const int ACS_BLOCK = unchecked((int)0x400030);
+        public const int COLOR_BLACK = unchecked((int)0x0);
+        public const int COLOR_RED = unchecked((int)0x1);
+        public const int COLOR_GREEN = unchecked((int)0x2);
+        public const int COLOR_YELLOW = unchecked((int)0x3);
+        public const int COLOR_BLUE = unchecked((int)0x4);
+        public const int COLOR_MAGENTA = unchecked((int)0x5);
+        public const int COLOR_CYAN = unchecked((int)0x6);
+        public const int COLOR_WHITE = unchecked((int)0x7);
+        public const int COLOR_GRAY = unchecked((int)0x8);
 
         static NativeMethods methods;
 
@@ -325,6 +375,13 @@ namespace DotnetConsoleGamesRL.Native
         static public int savetty() => methods.savetty();
         static public int resetty() => methods.resetty();
         static public int addstr(string str) => methods.addstr(str);
+        static public int getmaxx(IntPtr w) => methods.getmaxx(w);
+        static public int getmaxy(IntPtr w) => methods.getmaxy(w);
+
+        static public int ColorPair (int n)
+		{
+			return 0 + n * 256;
+		}
 
         static NCurses()
         {
