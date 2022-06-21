@@ -35,7 +35,7 @@ namespace DotnetConsoleGamesRL.Core;
 /// </summary>
 public interface IEnvironment<O, S, A, R>
 {
-    S Reset(O? options = default(O));
+    NDArray Reset(O? options = default(O));
     (S state, R reward, bool done, IDictionary? info) Step(A action);
     object? Render(RenderModes mode=RenderModes.None);
     void Close();

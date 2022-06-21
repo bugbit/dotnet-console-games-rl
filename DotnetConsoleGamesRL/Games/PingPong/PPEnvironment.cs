@@ -51,15 +51,15 @@ namespace DotnetConsoleGamesRL.Games.PingPong
             };
         }
 
-        public override PPEstado Reset(VoidOptions options = default)
+        public override NDArray Reset(VoidOptions options = default)
         {
             var paddle_y = (size.Y - paddleheight) / 2;
 
             paddles[0].Position = new Vector2(1, paddle_y);
-            paddles[1].Position = new Vector2(size.X - paddle_y;
+            paddles[1].Position = new Vector2(size.X - paddle_y);
             ball.Position = new Vector2(size.X / 2, size.Y / 2);
 
-            return new PPEstado();
+            return np.array(paddles[0].Position.X, float.MaxValue);
         }
 
         public override (PPEstado state, float reward, bool done, IDictionary? info) Step(PPAciones action)

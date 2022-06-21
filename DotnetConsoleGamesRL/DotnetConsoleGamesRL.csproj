@@ -8,8 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Using Include="System.Collections"/>
+    <Using Include="System.Collections" />
     <Using Include="System.Numerics" />
+    <Using Include="NumSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NumSharp" Version="0.30.0" />
   </ItemGroup>
 
 </Project>
