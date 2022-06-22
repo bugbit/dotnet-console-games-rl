@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Using Include="System.Collections" />
+    <Using Include="System.Diagnostics" />
     <Using Include="System.Numerics" />
     <Using Include="NumSharp" />
   </ItemGroup>
