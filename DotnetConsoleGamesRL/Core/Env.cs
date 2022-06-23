@@ -32,13 +32,14 @@ namespace DotnetConsoleGamesRL.Core;
 /// RD : renderer data
 /// </summary>
 /// <typeparam name="RD"></typeparam>
-public abstract class Env<O, RD> : IDisposable, IEnv<O, RD>
+public abstract class Env<O> : IDisposable, IEnv<O>
 {
-    public IDictionary? Netadata { get; set; }
+    protected NumPyRandom Random = np.random.RandomState();
+
+    public IDictionary? Metadata { get; set; }
     public (float From, float To) RewardRange { get; set; }
     public Space? ActionSpace { get; set; }
     public Space? ObservationSpace { get; set; }
-    public IRenderer<RD>? renderer { get; set; }
 
     public abstract NDArray Reset(O? options = default(O));
     public abstract object? Render(RenderModes mode = RenderModes.None);
@@ -47,7 +48,7 @@ public abstract class Env<O, RD> : IDisposable, IEnv<O, RD>
 
     public abstract void Close();
 
-    public abstract void Seed(int seed);
+    public void Seed(int seed)=> Random = np.random.RandomState(seed);
 
     public void Dispose()
     {

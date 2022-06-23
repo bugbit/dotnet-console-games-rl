@@ -32,13 +32,12 @@ namespace DotnetConsoleGamesRL.Core;
 /// RD : renderer data
 /// </summary>
 /// <typeparam name="RD"></typeparam>
-public interface IEnv<O, RD>
+public interface IEnv<O>
 {
-    IDictionary? Netadata { get; set; }
+    IDictionary? Metadata { get; set; }
     (float From, float To) RewardRange { get; set; }
     Space? ActionSpace { get; set; }
     Space? ObservationSpace { get; set; }
-    IRenderer<RD>? renderer { get; set; }
 
     NDArray Reset(O? options = default(O));
     object? Render(RenderModes mode = RenderModes.None);

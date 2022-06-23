@@ -2,13 +2,13 @@
 
 try
 {
-    var env = PPEnvironment.Create();
-    var e0 = env.Reset();
+    //var env = PPEnvironment.Create();
+    //var e0 = env.Reset();
 
-    // initscr();
-    // addstr("HelloWord");
-    // refresh();
-    // endwin();
+    //initscr();
+    //addstr("HelloWord");
+    //refresh();
+    //endwin();
     //env.AddAgent
 }
 catch (Exception ex)
